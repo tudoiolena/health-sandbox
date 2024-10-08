@@ -1,0 +1,85 @@
+:root {
+  --font-karla: Karla, sans-serif;
+  --font-montserrat: Montserrat, sans-serif;
+  --color-primary: rgba(128, 128, 128, 1);
+  --color-accent: rgba(66, 171, 222, 1);
+  --color-black: rgba(35, 31, 32, 1);
+  --color-white: rgb(255, 255, 255);
+  --color-light-grey: rgba(248, 248, 248, 1);
+  --font-size-small: 15px;
+  --font-size-large: 24px;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+@media (max-width: 765px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.social-grid-item {
+  background-color: grey;
+  border-radius: 10px;
+  padding: 30px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.social-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow-icon-45 {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+/*LARGE LIST*/
+
+.large-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid gray;
+  padding: 20px 0px;
+}
+
+@media (max-width: 765px) {
+  .large-list {
+    flex-direction: column;
+  }
+  .large-list-item:nth-child(2n - 1) {
+    order: 1;
+  }
+}
+
+.large-list-text {
+  width: 400px;
+}
+
+/*MARGINS / PADDINGS*/
+
+.padding-top-bottom-20 {
+  padding: 20px 0;
+}
+
+.flex-vertical-align {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

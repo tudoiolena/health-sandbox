@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+        }
+
+        @media (max-width: 765px) {
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .social-grid-item {
+            background-color: grey;
+            border-radius: 10px;
+            padding: 30px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .social-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .arrow-icon-45 {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+        }
+    </style>
+    <main>
+        <section class="container">
+            <div class="social-grid">
+                <div class="social-grid-item">
+                    <div>
+                        Gmail
+                    </div>
+                    <a class="social-link" href="">example.lorem@gmail.com<span class="arrow-icon-45"></span></a>
+                </div>
+                <div class="social-grid-item">
+                    <div>
+                        Gmail
+                    </div>
+                    <a class="social-link" href="">example.lorem@gmail.com<span class="arrow-icon-45"></span></a>
+                </div>
+                <div class="social-grid-item">
+                    <div>
+                        Gmail
+                    </div>
+                    <a class="social-link" href="">example.lorem@gmail.com<span class="arrow-icon-45"></span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

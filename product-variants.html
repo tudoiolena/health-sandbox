@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/product-variants.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .product-variants {
+        padding-inline: 25px;
+
+        @media (min-width: 1366px) {
+            padding-inline: 62px;
+        }
+
+        & .swiper-ultimate-products {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            overflow: hidden;
+
+            @media (min-width: 1366px) {
+                max-width: 1350px;
+                margin: auto;
+                height: 600px;
+                align-items: center;
+                flex-direction: row-reverse;
+            }
+
+            & .swiper-slide {
+                display: flex;
+                align-items: center;
+            }
+
+            & .slide-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, auto);
+                gap: 15px;
+
+                & .title {
+                    font-family: var(--font-montserrat);
+                    height: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 32px;
+
+                    @media (min-width: 1366px) {
+                        justify-content: left;
+                    }
+                }
+
+                & .product-media {
+                    width: 100%;
+                    height: 100%;
+                    align-content: center;
+                    background-color: var(--color-light-grey);
+                    overflow: hidden;
+                    border-radius: 12px;
+
+                    & img {
+                        max-height: 450px;
+                        height: auto;
+                        margin: 0 auto;
+                    }
+
+                    & .swiper-ultimate-variants-pagination {
+                        padding-bottom: 8px;
+                        display: flex;
+                        justify-content: center;
+
+                        & .swiper-pagination-bullet {
+                            width: 18px;
+                            height: 18px;
+                            opacity: 1;
+                            border: 2px solid transparent;
+                            position: relative;
+                            background-color: var(--color-primary);
+
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: -5px;
+                                left: -5px;
+                                width: calc(100% + 10px);
+                                height: calc(100% + 10px);
+                                border: 1px solid transparent;
+                                border-radius: 50%;
+                                transition: border 0.3s ease;
+                            }
+
+                            &:hover::before,
+                            &.swiper-pagination-bullet-active::before {
+                                border: 1px solid var(--color-accent);
+                            }
+
+                            &.swiper-pagination-bullet-active {
+                                background-color: var(--color-accent)
+                            }
+                        }
+
+                    }
+                }
+
+                & .description {
+                    font-family: var(--font-karla);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    color: var(--color-primary);
+
+                    & .weight {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    & ul {
+                        padding-left: 24px;
+
+                        & li::marker {
+                            color: var(--color-accent);
+                            font-size: 24px;
+                        }
+                    }
+
+                    & button {
+                        width: 100%;
+
+                        @media (min-width: 1366px) {
+                            max-width: 180px;
+                        }
+                    }
+                }
+
+                @media (min-width: 1366px) {
+                    grid-template-columns: repeat(2, 600px);
+                    grid-template-rows: 100px 500px;
+                    grid-template-areas:
+                        'title product-media'
+                        'description product-media';
+                    align-items: center;
+                    gap: 0 50px;
+
+                    & .title {
+                        grid-area: title;
+                    }
+
+                    & .description {
+                        grid-area: description;
+                    }
+
+                    & .product-media {
+                        grid-area: product-media;
+                    }
+                }
+            }
+        }
+
+        & .swiper-ultimate-controls {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @media (min-width: 1366px) {
+                width: 50px;
+                height: 100%;
+                flex-direction: column;
+            }
+        }
+
+        & .swiper-ultimate-scrollbar {
+            width: 100%;
+            height: 5px;
+            background-color: var(--color-light-grey);
+
+            @media (min-width: 1366px) {
+                width: 5px;
+                height: 100%;
+            }
+
+            & .swiper-scrollbar-drag {
+                background-color: var(--color-accent);
+            }
+        }
+
+        & .swiper-ultimate-prev,
+        .swiper-ultimate-next {
+            position: relative;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            padding: 30px;
+            border-radius: 50%;
+            outline: 1px solid var(--color-light-grey);
+            background-color: var(--color-light-grey);
+            outline-offset: -5px;
+            cursor: pointer;
+
+
+            &:after {
+                content: '';
+            }
+        }
+
+        & .swiper-ultimate-prev {
+            background: url('assets/arrow-prev.svg') no-repeat center;
+            background-color: var(--color-light-grey);
+
+            @media (min-width: 1366px) {
+                transform: rotate(90deg);
+            }
+        }
+
+        & .swiper-ultimate-next {
+            background: url('assets/arrow-next.svg') no-repeat center;
+            background-color: var(--color-light-grey);
+
+            @media (min-width: 1366px) {
+                transform: rotate(90deg);
+            }
+        }
+
+        .button-small {
+            width: 180px;
+        }
+    }
+</style>
+
+<body>
+    <section class="product-variants container ultimate-wrapper">
+        <div class="swiper-ultimate-products">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="slide-content">
+
+
+                        <h2 class="title">The Health Project Ultimate Whey Protein. Title 1</h2>
+
+                        <div class="product-media">
+
+                            <div class="swiper-ultimate-variants">
+                                <div class="swiper-wrapper">
+
+                                    <div class="swiper-slide">
+                                        <img src="assets/banana.png">
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <img src="assets/plant.png">
+                                    </div>
+
+                                </div>
+                                <div class="swiper-ultimate-variants-pagination"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="description">
+                            <div class="weight">
+                                200g
+
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices,
+                                feugiat augue vitae, accumsan quam.
+                                In auctor sem nunc, ac iaculis lacus dignissim nec. Description 1</p>
+
+                            <button class="button-small">Buy now 24.99$</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="slide-content">
+
+
+                        <h2 class="title">The Health Project Ultimate Whey Protein. Title 1</h2>
+
+                        <div class="product-media">
+
+                            <div class="swiper-ultimate-variants">
+                                <div class="swiper-wrapper">
+
+                                    <div class="swiper-slide">
+                                        <img src="assets/banana.png">
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <img src="assets/plant.png">
+                                    </div>
+
+                                </div>
+                                <div class="swiper-ultimate-variants-pagination"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="description">
+                            <div class="weight">
+                                200g
+
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices,
+                                feugiat augue vitae, accumsan quam.
+                                In auctor sem nunc, ac iaculis lacus dignissim nec. Description 1</p>
+
+                            <button class="button-primary">Buy now 24.99$</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-ultimate-controls">
+                <div class="swiper-ultimate-prev"></div>
+                <div class="swiper-ultimate-scrollbar"></div>
+                <div class="swiper-ultimate-next"></div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    const isMobile = () => window.innerWidth < 1366;
+
+    const productsSwiper = new Swiper('.swiper-ultimate-products', {
+        direction: isMobile() ? 'horizontal' : 'vertical',
+        spaceBetween: 8,
+        scrollbar: {
+            el: '.swiper-ultimate-scrollbar',
+        },
+        navigation: {
+            prevEl: '.swiper-ultimate-prev',
+            nextEl: '.swiper-ultimate-next',
+        },
+        on: {
+            resize: () => {
+                productsSwiper.changeDirection(isMobile() ? 'horizontal' : 'vertical');
+            },
+        },
+    });
+
+    const variantsSwiper = new Swiper('.swiper-ultimate-variants', {
+        direction: 'horizontal',
+        spaceBetween: 14,
+        slidesPerView: 1,
+        pagination: {
+            el: '.swiper-ultimate-variants-pagination',
+            clickable: true,
+        },
+        on: {
+            touchStart: () => {
+                productsSwiper.allowTouchMove = false;
+            },
+            touchEnd: () => {
+                productsSwiper.allowTouchMove = true;
+            },
+        },
+    });
+</script>
+
+</html>
