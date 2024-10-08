@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/product-variants.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
@@ -50,7 +49,7 @@
 
                 <div class="swiper-slide">
                     <div class="slide-container">
-                        <h2 class="vertical-slider-product-title">The Health Project Ultimate Whey Protein. Title 1</h2>
+                        <h2 class="vertical-slider-product-title">The Health Project Ultimate Whey Protein. Title 2</h2>
                         <div class="swiper-horizontal-container">
                             <div class="swiper-horizontal">
                                 <div class="swiper-wrapper">
@@ -67,12 +66,12 @@
 
                         <div class="vertical-slider-product-description">
                             <div class="weight">
-                                200g
+                                300g
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices,
+                            <p>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices,
                                 feugiat augue vitae, accumsan quam.
                                 In auctor sem nunc, ac iaculis lacus dignissim nec. Description 1</p>
-                            <a href="#" class="button-small">Buy now 24.99$</a>
+                            <a href="#" class="button-small">2 Buy now 24.99$</a>
                         </div>
                     </div>
                 </div>
@@ -91,6 +90,8 @@
 
 <script>
     const isMobile = () => window.innerWidth < 1366;
+
+    console.log("isMobile", isMobile())
 
     const productsSwiper = new Swiper('.swiper-vertical', {
         direction: isMobile() ? 'horizontal' : 'vertical',
