@@ -16,317 +16,319 @@
 <style>
     .product-variants {
         padding-inline: 25px;
+    }
 
-        @media (min-width: 1366px) {
+    @media (min-width: 1366px) {
+        .product-variants {
             padding-inline: 62px;
         }
+    }
 
-        & .swiper-ultimate-products {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            overflow: hidden;
+    .swiper-vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        overflow: hidden;
+    }
 
-            @media (min-width: 1366px) {
-                max-width: 1350px;
-                margin: auto;
-                height: 600px;
-                align-items: center;
-                flex-direction: row-reverse;
-            }
-
-            & .swiper-slide {
-                display: flex;
-                align-items: center;
-            }
-
-            & .slide-content {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(3, auto);
-                gap: 15px;
-
-                & .title {
-                    font-family: var(--font-montserrat);
-                    height: 100px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-weight: 500;
-                    font-size: 32px;
-
-                    @media (min-width: 1366px) {
-                        justify-content: left;
-                    }
-                }
-
-                & .product-media {
-                    width: 100%;
-                    height: 100%;
-                    align-content: center;
-                    background-color: var(--color-light-grey);
-                    overflow: hidden;
-                    border-radius: 12px;
-
-                    & img {
-                        max-height: 450px;
-                        height: auto;
-                        margin: 0 auto;
-                    }
-
-                    & .swiper-ultimate-variants-pagination {
-                        padding-bottom: 8px;
-                        display: flex;
-                        justify-content: center;
-
-                        & .swiper-pagination-bullet {
-                            width: 18px;
-                            height: 18px;
-                            opacity: 1;
-                            border: 2px solid transparent;
-                            position: relative;
-                            background-color: var(--color-primary);
-
-
-                            &::before {
-                                content: '';
-                                position: absolute;
-                                top: -5px;
-                                left: -5px;
-                                width: calc(100% + 10px);
-                                height: calc(100% + 10px);
-                                border: 1px solid transparent;
-                                border-radius: 50%;
-                                transition: border 0.3s ease;
-                            }
-
-                            &:hover::before,
-                            &.swiper-pagination-bullet-active::before {
-                                border: 1px solid var(--color-accent);
-                            }
-
-                            &.swiper-pagination-bullet-active {
-                                background-color: var(--color-accent)
-                            }
-                        }
-
-                    }
-                }
-
-                & .description {
-                    font-family: var(--font-karla);
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    color: var(--color-primary);
-
-                    & .weight {
-                        font-size: 18px;
-                        font-weight: 500;
-                    }
-
-                    & ul {
-                        padding-left: 24px;
-
-                        & li::marker {
-                            color: var(--color-accent);
-                            font-size: 24px;
-                        }
-                    }
-
-                    & button {
-                        width: 100%;
-
-                        @media (min-width: 1366px) {
-                            max-width: 180px;
-                        }
-                    }
-                }
-
-                @media (min-width: 1366px) {
-                    grid-template-columns: repeat(2, 600px);
-                    grid-template-rows: 100px 500px;
-                    grid-template-areas:
-                        'title product-media'
-                        'description product-media';
-                    align-items: center;
-                    gap: 0 50px;
-
-                    & .title {
-                        grid-area: title;
-                    }
-
-                    & .description {
-                        grid-area: description;
-                    }
-
-                    & .product-media {
-                        grid-area: product-media;
-                    }
-                }
-            }
-        }
-
-        & .swiper-ultimate-controls {
-            height: 52px;
-            display: flex;
+    @media (min-width: 1366px) {
+        .swiper-vertical {
+            max-width: 1350px;
+            margin: auto;
+            height: 600px;
             align-items: center;
-            gap: 10px;
+            flex-direction: row-reverse;
+        }
+    }
 
-            @media (min-width: 1366px) {
-                width: 50px;
-                height: 100%;
-                flex-direction: column;
-            }
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+    }
+
+    .slide-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 15px;
+    }
+
+    .vertical-slider-product-title {
+        font-family: var(--font-montserrat);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        font-size: 32px;
+    }
+
+    @media (min-width: 1366px) {
+        .vertical-slider-product-title {
+            justify-content: left;
+        }
+    }
+
+    .swiper-horizontal-container {
+        width: 100%;
+        height: 100%;
+        align-content: center;
+        background-color: var(--color-light-grey);
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .swiper-horizontal-container img {
+        max-height: 450px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .swiper-horizontal-pagination {
+        padding-bottom: 8px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .swiper-pagination-bullet {
+        width: 18px;
+        height: 18px;
+        opacity: 1;
+        border: 2px solid transparent;
+        position: relative;
+        background-color: var(--color-primary);
+    }
+
+    .swiper-pagination-bullet::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        border: 1px solid transparent;
+        border-radius: 50%;
+        transition: border 0.3s ease;
+    }
+
+    .swiper-pagination-bullet:hover::before,
+    .swiper-pagination-bullet-active::before {
+        border: 1px solid var(--color-accent);
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-accent);
+    }
+
+    .vertical-slider-product-description {
+        font-family: var(--font-karla);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--color-primary);
+        line-height: 25px;
+    }
+
+    .weight {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+    }
+
+    .vertical-slider-product-description ul {
+        padding-left: 24px;
+    }
+
+    .vertical-slider-product-description ul li::marker {
+        color: var(--color-accent);
+        font-size: 24px;
+    }
+
+    .vertical-slider-product-description a {
+        width: 100%;
+    }
+
+    @media (min-width: 1366px) {
+        .vertical-slider-product-description a {
+            max-width: 180px;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        .slide-container {
+            grid-template-columns: repeat(2, 600px);
+            grid-template-rows: 100px 500px;
+            grid-template-areas:
+                'vertical-slider-product-title swiper-horizontal-container'
+                'vertical-slider-product-description swiper-horizontal-container';
+            align-items: center;
+            gap: 0 50px;
         }
 
-        & .swiper-ultimate-scrollbar {
-            width: 100%;
-            height: 5px;
-            background-color: var(--color-light-grey);
-
-            @media (min-width: 1366px) {
-                width: 5px;
-                height: 100%;
-            }
-
-            & .swiper-scrollbar-drag {
-                background-color: var(--color-accent);
-            }
+        .vertical-slider-product-title {
+            grid-area: vertical-slider-product-title;
         }
 
-        & .swiper-ultimate-prev,
-        .swiper-ultimate-next {
-            position: relative;
-            right: 0;
-            width: 20px;
-            height: 20px;
-            padding: 30px;
-            border-radius: 50%;
-            outline: 1px solid var(--color-light-grey);
-            background-color: var(--color-light-grey);
-            outline-offset: -5px;
-            cursor: pointer;
-
-
-            &:after {
-                content: '';
-            }
+        .vertical-slider-product-description {
+            grid-area: vertical-slider-product-description;
         }
 
-        & .swiper-ultimate-prev {
-            background: url('assets/arrow-prev.svg') no-repeat center;
-            background-color: var(--color-light-grey);
-
-            @media (min-width: 1366px) {
-                transform: rotate(90deg);
-            }
+        .swiper-horizontal-container {
+            grid-area: swiper-horizontal-container;
         }
+    }
 
-        & .swiper-ultimate-next {
-            background: url('assets/arrow-next.svg') no-repeat center;
-            background-color: var(--color-light-grey);
+    .swiper-vertical-navigation {
+        height: 52px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-            @media (min-width: 1366px) {
-                transform: rotate(90deg);
-            }
+    @media (min-width: 1366px) {
+        .swiper-vertical-navigation {
+            width: 50px;
+            height: 100%;
+            flex-direction: column;
         }
+    }
 
-        .button-small {
-            width: 180px;
+    .swiper-vertical-scrollbar {
+        width: 100%;
+        height: 5px;
+        background-color: var(--color-light-grey);
+    }
+
+    @media (min-width: 1366px) {
+        .swiper-vertical-scrollbar {
+            width: 5px;
+            height: 100%;
         }
+    }
+
+    .swiper-scrollbar-drag {
+        background-color: var(--color-accent);
+    }
+
+    .swiper-vertical-prev,
+    .swiper-vertical-next {
+        position: relative;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        padding: 30px;
+        border-radius: 50%;
+        outline: 1px solid var(--color-light-grey);
+        background-color: var(--color-light-grey);
+        outline-offset: -5px;
+        cursor: pointer;
+    }
+
+    .swiper-vertical-prev::after,
+    .swiper-vertical-next::after {
+        content: '';
+    }
+
+    .swiper-vertical-prev {
+        background: url('assets/arrow-prev.svg') no-repeat center;
+        background-color: var(--color-light-grey);
+    }
+
+    @media (min-width: 1366px) {
+        .swiper-vertical-prev {
+            transform: rotate(90deg);
+        }
+    }
+
+    .swiper-vertical-next {
+        background: url('assets/arrow-next.svg') no-repeat center;
+        background-color: var(--color-light-grey);
+    }
+
+    @media (min-width: 1366px) {
+        .swiper-vertical-next {
+            transform: rotate(90deg);
+        }
+    }
+
+    .button-small {
+        width: 180px;
+        background-color: var(--color-accent);
+        padding: 14px 28px;
+        color: var(--color-white);
+        border: none;
+        border-radius: 100px;
+        font-size: 15px;
+        font-family: var(--font-family-secondary);
+        text-decoration: none;
     }
 </style>
 
 <body>
-    <section class="product-variants container ultimate-wrapper">
-        <div class="swiper-ultimate-products">
+    <section class="product-variants container">
+        <div class="swiper-vertical">
             <div class="swiper-wrapper">
-
                 <div class="swiper-slide">
-                    <div class="slide-content">
-
-
-                        <h2 class="title">The Health Project Ultimate Whey Protein. Title 1</h2>
-
-                        <div class="product-media">
-
-                            <div class="swiper-ultimate-variants">
+                    <div class="slide-container">
+                        <h2 class="vertical-slider-product-title">The Health Project Ultimate Whey Protein. Title 1</h2>
+                        <div class="swiper-horizontal-container">
+                            <div class="swiper-horizontal">
                                 <div class="swiper-wrapper">
-
                                     <div class="swiper-slide">
                                         <img src="assets/banana.png">
                                     </div>
-
                                     <div class="swiper-slide">
                                         <img src="assets/plant.png">
                                     </div>
-
                                 </div>
-                                <div class="swiper-ultimate-variants-pagination"></div>
+                                <div class="swiper-horizontal-pagination"></div>
                             </div>
-
                         </div>
-
-                        <div class="description">
+                        <div class="vertical-slider-product-description">
                             <div class="weight">
                                 200g
-
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices,
                                 feugiat augue vitae, accumsan quam.
                                 In auctor sem nunc, ac iaculis lacus dignissim nec. Description 1</p>
-
-                            <button class="button-small">Buy now 24.99$</button>
+                            <a href="#" class="button-small">Buy now 24.99$</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="swiper-slide">
-                    <div class="slide-content">
-
-
-                        <h2 class="title">The Health Project Ultimate Whey Protein. Title 1</h2>
-
-                        <div class="product-media">
-
-                            <div class="swiper-ultimate-variants">
+                    <div class="slide-container">
+                        <h2 class="vertical-slider-product-title">The Health Project Ultimate Whey Protein. Title 1</h2>
+                        <div class="swiper-horizontal-container">
+                            <div class="swiper-horizontal">
                                 <div class="swiper-wrapper">
-
                                     <div class="swiper-slide">
                                         <img src="assets/banana.png">
                                     </div>
-
                                     <div class="swiper-slide">
                                         <img src="assets/plant.png">
                                     </div>
-
                                 </div>
-                                <div class="swiper-ultimate-variants-pagination"></div>
+                                <div class="swiper-horizontal-pagination"></div>
                             </div>
-
                         </div>
 
-                        <div class="description">
+                        <div class="vertical-slider-product-description">
                             <div class="weight">
                                 200g
-
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices,
                                 feugiat augue vitae, accumsan quam.
                                 In auctor sem nunc, ac iaculis lacus dignissim nec. Description 1</p>
-
-                            <button class="button-primary">Buy now 24.99$</button>
+                            <a href="#" class="button-small">Buy now 24.99$</a>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <div class="swiper-ultimate-controls">
-                <div class="swiper-ultimate-prev"></div>
-                <div class="swiper-ultimate-scrollbar"></div>
-                <div class="swiper-ultimate-next"></div>
+            <div class="swiper-vertical-navigation">
+                <div class="swiper-vertical-prev"></div>
+                <div class="swiper-vertical-scrollbar"></div>
+                <div class="swiper-vertical-next"></div>
             </div>
         </div>
     </section>
@@ -337,15 +339,15 @@
 <script>
     const isMobile = () => window.innerWidth < 1366;
 
-    const productsSwiper = new Swiper('.swiper-ultimate-products', {
+    const productsSwiper = new Swiper('.swiper-vertical', {
         direction: isMobile() ? 'horizontal' : 'vertical',
         spaceBetween: 8,
         scrollbar: {
-            el: '.swiper-ultimate-scrollbar',
+            el: '.swiper-vertical-scrollbar',
         },
         navigation: {
-            prevEl: '.swiper-ultimate-prev',
-            nextEl: '.swiper-ultimate-next',
+            prevEl: '.swiper-vertical-prev',
+            nextEl: '.swiper-vertical-next',
         },
         on: {
             resize: () => {
@@ -354,12 +356,12 @@
         },
     });
 
-    const variantsSwiper = new Swiper('.swiper-ultimate-variants', {
+    const variantsSwiper = new Swiper('.swiper-horizontal', {
         direction: 'horizontal',
         spaceBetween: 14,
         slidesPerView: 1,
         pagination: {
-            el: '.swiper-ultimate-variants-pagination',
+            el: '.swiper-horizontal-pagination',
             clickable: true,
         },
         on: {
